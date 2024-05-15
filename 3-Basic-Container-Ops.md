@@ -63,7 +63,81 @@ docker container ls -l
 docker container ls -q
 
 ## all running, stopped container 
-docjer container ls -aq
+docker container ls -aq
 
 ```
 
+
+## Combine start and Create Container into Oone command
+```md
+## start a container
+docker container start 232u2334223
+
+## list container 
+docker container ls 
+
+## combined formed 
+
+docker container run httpd 
+
+```
+
+## When container stops and exits
+
+```md
+## containers are not meant to host an OS like ubuntu unlike Virtual machines 
+
+## They are meant to run a specific task and processes
+
+## e.g to host a specific instance of a webserver, application server, database, or run a computation or analysis. 
+
+
+```
+
+## Important point about container live 
+
+A container only lives if the process inside it is alive!
+
+For Ubuntu stopping, Ubuntu is an image of an OS, it is used as a based image for building images of other apps. 
+
+No process running on it by default. 
+
+So it used as base image of other applications that are based on the ubuntu Operating system. 
+
+## Ubuntu Image and SHELL
+When we started an Ubuntu container, it ran a `SHELL` as a process, but did not find a terminal to associate with it, hence the process/SHELL dies. 
+
+
+```md
+## To make the terminal iteractive and attacg
+i - iteractive
+t - terminal attached 
+
+docker container run -it ubuntu 
+
+## container is running now
+In this case, what is running is the Bash shell process, hence, what is keeping the container running 
+
+```
+
+## Adding a flag like -i , -t
+Always specify it before the image name.
+
+Anything passed to the right of the image is passed into the container.
+
+`docker container run -it ubuntu `
+
+
+## Running exit will stop the container
+runnning exit will stop the container, i.e the only running process in the conatiner in the case of Ubuntu. 
+
+## Naming a docker container
+`docker container run -itd --name=webapp ubuntu`
+
+d - detach mode will run in the background, by default, it is attached mode
+
+## to rerun in detach mode
+`docker container attach 11cb`
+
+## Renaming 
+`docker container rename webapp custom-webapp`

@@ -3,7 +3,7 @@
 ## start as a service
 - systemctl start docker
 - systemctl status docker
--  systemctl stop docker
+- systemctl stop docker
 
 ## start manually for debugging
 These commands and run in place of systemctl service, when a debug is needed and troubleshooting is done manually 
@@ -56,7 +56,6 @@ https://github.com/sheyijojo/Docker_CERT.git
 `![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 `
 ## Image - TCP Socket
-![TCP_socket](/Docker_CERT/_assets/Screenshot%202024-05-15%20at%2010.45.00 AM.png)
 
 ![TCP](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/tcp_socket.png?raw=true)
 
