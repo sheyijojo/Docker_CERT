@@ -1,4 +1,4 @@
-## Ubuntu common commands
+## Ubuntu common commands for running docker 
 ```md
 ## start as a service
 - systemctl start docker
@@ -6,7 +6,8 @@
 - systemctl stop docker
 
 ## start manually for debugging
-These commands and run in place of systemctl service, when a debug is needed and troubleshooting is done manually 
+These commands are run in place of systemctl service, when a debug is needed and when troubleshooting is done manually 
+
 - dockerd  
 - dockerd --debug
 
@@ -15,13 +16,13 @@ These commands and run in place of systemctl service, when a debug is needed and
 /var/run/docker.sock
 ```
 
-## Make communication with docker.sock outside host
+## Make communication with docker.sock outside docker host
 
 
 ```md
 ## Done by opening a TCP connection like this
 ## Be very careful if your host is public facing, no auth required.
-## The default does not open a TCP connection
+## The default does not open a TCP connection, hence no auth
 ## get the IP of the docker host 
 
 dockerd --debug \
@@ -36,7 +37,7 @@ docker ps
 ```
 ## To create TLS Encriyption
 
-```bash
+```md
 
 ## for tls cert the standard port for docker is now 2376 
 dockerd --debug  \
@@ -49,18 +50,23 @@ dockerd --debug  \
 ```
 
 ## Image reference - TCP Socket 
+
+#### image raw reference:
+```md
 https://github.com/sheyijojo/Docker_CERT.git
 
 
-
 `![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+```
+
 `
 ## Image - TCP Socket
 
 ![TCP](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/tcp_socket.png?raw=true)
 
 
-## Optionally add the dockerd cparameter in daemon.json config file 
+## Optionally add the dockerd parameter in daemon.json config file 
 
 ```json
 

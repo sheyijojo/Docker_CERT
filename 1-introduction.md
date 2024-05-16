@@ -3,7 +3,7 @@
 
 ## Dokcer SetUp Ubuntu
 - See installation instruction on a docker website
--
+
 ## Check all info of Docker on Ubuntu
 - `sudo docker system info |more`
 
@@ -11,11 +11,11 @@
 ## Docker Engine Architecture
 
 Docker Daemon is responsible for the networks
-- The OCI(Open Container Initiaves) brought structure to runtime spec and image spec.
-- Just like the lifecycle of how container to be. 
+- The `OCI(Open Container Initiaves)` brought structure to runtime spec and image spec.
+- Just like howthe lifecycle of how container to be. 
 - `Docker Daemon` manages the images, volumes, and networks
 - `Containerd`- manages the containers
-- `containerd-shim`- 
+- `containerd-shim`- ensures container runs of daemon fails
 - `runC`- run container
 
 ## 4 priimary objects Docker manages 

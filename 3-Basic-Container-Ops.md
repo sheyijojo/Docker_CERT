@@ -1,4 +1,4 @@
-## By default, when docker is installed
+## Default location od=f docker in linux systems 
 
 `ls /var/lib/docker/`
 
@@ -6,17 +6,23 @@
 
 `ls -lrt /var/lib/docker/containers/`
 
+```md
+
 Here you find the ID of the containers created and can be used to debug in linux host. 
 
 You will see all the files of the container. 
 
+
+```
 ## Docker Objects 
 - Volume
 - Networks 
 - Containers
 - Images 
 
-```bash
+```md
+
+## common commands 
 docker image ls
 
 docker container ls
@@ -31,7 +37,7 @@ docker container run -it ubuntu
 ## build an image 
 docker image build .
 
-## Attach to a running container
+## Attach an ubuntu to a running container
 
 docker container attach ubuntu
 
@@ -41,9 +47,9 @@ docker container kill ubuntu
 
 ```
 
-## More commands follwoing the new convection above
+## More commands following the new convection above
 
-```bash
+```md
 # create a httpd container without running it 
 
 docker container create httpd 
@@ -95,8 +101,8 @@ docker container run httpd
 ```
 
 ## Important point about container live 
-
-A container only lives if the process inside it is alive!
+```md
+# A container only lives if the process inside it is alive!
 
 For Ubuntu stopping, Ubuntu is an image of an OS, it is used as a based image for building images of other apps. 
 
@@ -104,19 +110,24 @@ No process running on it by default.
 
 So it used as base image of other applications that are based on the ubuntu Operating system. 
 
+It will only be alive if a process is run inside such as a `SHELL` process
+
+
+```
+
 ## Ubuntu Image and SHELL
 When we started an Ubuntu container, it ran a `SHELL` as a process, but did not find a terminal to associate with it, hence the process/SHELL dies. 
 
 
 ```md
-## To make the terminal iteractive and attacg
+## To make the terminal iteractive and attached
 i - iteractive
 t - terminal attached 
 
 docker container run -it ubuntu 
 
 ## container is running now
-In this case, what is running is the Bash shell process, hence, what is keeping the container running 
+In this case, what is running is the Bash shell process, hence, what is keeping the container running and alive without exiting. 
 
 ```
 
