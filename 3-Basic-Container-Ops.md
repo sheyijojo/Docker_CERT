@@ -65,10 +65,10 @@ docker container ls -a
 ## last created container details
 docker container ls -l
 
-## short running container 
+## running container with ids only
 docker container ls -q
 
-## all running, stopped container 
+## all running and stopped container 
 docker container ls -aq
 
 ```

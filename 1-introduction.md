@@ -18,11 +18,11 @@ Docker Daemon is responsible for the networks
 - `containerd-shim`- ensures container runs of daemon fails
 - `runC`- run container
 
-## 4 priimary objects Docker manages 
+## 4 primary objects Docker manages:
 1. Images
 2. Networks
 3. Containers
 4. Volumes 
 
 ## Containers are emphemeral,but ..
-- Volumes help persist data incase there is a restart 
+- Volumes help persist data incase there is a restart of the container.
