@@ -4,7 +4,7 @@
 
 
 
-```m
+```md
 
 ## CMD is httpd-foreground
 `This is the command executed when docker is started `
@@ -75,4 +75,25 @@ docker container prune
 
 ## We may not require to stay running after execution 
 docker container run --rm ubuntu expr 4 + 5
+```
+
+## Inside the container
+```md
+## check with process is running 
+
+ps -ef
+
+## inside the container 
+docker exec -it 9f232242222 hostname
+
+docker exec -it 2429u23sd03q cat /etc/lsb-release 
+
+
+## Relogging into the container using /bin/bash, a new process created by me 
+
+docker container exec -it 9f23223239 /bin/bash
+
+## Be carefule with attach
+
+it replaces the original process, so if you type exit, it kills the container 
 ```
