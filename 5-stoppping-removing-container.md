@@ -93,7 +93,15 @@ docker exec -it 2429u23sd03q cat /etc/lsb-release
 
 docker container exec -it 9f23223239 /bin/bash
 
-## Be carefule with attach
+## Be carefull with attach
 
 it replaces the original process, so if you type exit, it kills the container 
 ```
+
+## Container Hostname
+
+```md
+## used when you need to set a URL
+docker container run -it --name=webapp --hostname=webapp ubuntu
+```
+
