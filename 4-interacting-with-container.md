@@ -22,7 +22,7 @@ docker container exec -t b71212b1121b /bin/bash
 
 ## if you exit, you can attach back to the container 
 
-docker container attached b7243232323
+docker container attach b7243232323
 
 //this takes you back into the container 
 ```
@@ -33,7 +33,7 @@ docker container attached b7243232323
 
 
 ```md
-## returns all details of a container in a json
+## returns all details of a container in json
 docker container inspect webapp
 
 ## Container stats with native docker utility
