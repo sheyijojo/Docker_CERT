@@ -1,4 +1,4 @@
-## publishing ports 
+## Publishing ports 
 ```md
 ## How can a user access the application running in docker?
 
