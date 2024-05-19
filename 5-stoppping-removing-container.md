@@ -75,9 +75,14 @@ docker container rm $(docker container ls -a)
 ## OR use prune to rm all stoped containers
 docker container prune 
 
+## --rm: Automatically remove the container when it exits.
 ## We may not require to stay running after execution 
 ## after expr eqn is done, it removes the container
 docker container run --rm ubuntu expr 4 + 5
+
+
+## if i run docker stop webapp
+it removes the container permently 
 ```
 
 ## Inside the container
@@ -106,6 +111,7 @@ it replaces the original process, so if you type exit, it kills the container
 ```md
 ## Here we setting a new hostname to the web app container
 ## used when you need to set a URL
+
 docker container run -it --name=webapp --hostname=webapp ubuntu
 ```
 
