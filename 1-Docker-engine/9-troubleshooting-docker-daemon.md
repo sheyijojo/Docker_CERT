@@ -3,7 +3,7 @@
 ```md
 docker ps 
 
-## if the a wants to connect to DOCKER host remotely
+## if a host wants to connect to DOCKER host remotely
 
 ## export DOCKER_HOST="tcp://192.168.1.10:2375"
 
@@ -19,15 +19,13 @@ port 2376 for encrypted traffic
 
 journalctl -u docker.service
 
-## check if the debug: true 
+## check if the debug: true, i.e if it is set to true 
 
 /etc/docker/daemon.json
 
-
-
 ## Docker also stores all the files in this directory
 
-/var/lib/docker   ##
+/var/lib/docker   
 
 ## check the free space on the host
 df -h
@@ -48,7 +46,7 @@ docker system events
 docker run -itd --name=webapp ubuntu 
 tail -30 /var/log/messages
 
-## edit the 
+## set to true by editing the json  
 
 vi /etc/docker/daemon.json
 
@@ -68,7 +66,7 @@ docker system info
 ```md
 ## can set the default logs to awslogs for cloudwatch events 
 
-All containers will use the logging driver of aws logs 
+All containers will start using the logging driver of aws logs if it is set like this below
 
 {
 "log-driver": "awslogs",
@@ -77,7 +75,7 @@ All containers will use the logging driver of aws logs
 
 ## you will need to specify the AWS key and ID as env variable 
 
-## speficy logging driver for one single container 
+## speficy logging driver as json file for one single container 
 
 docker container run --log-driver json-file nginx
 

@@ -60,8 +60,4 @@ if you remove the custom tag, this will not delete the otherimage the custom tag
 
 docker image prune -a
 
-
-
-
-
 ```

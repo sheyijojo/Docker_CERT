@@ -42,7 +42,7 @@ docker run -P frontend/webapp
 ## it knows this port app will be running on from the Dockefile
 ## and publsihes the port on a random host within a limited range 
 
-
+## Dockefile 
 FROM unbuntu:16.04
 RUN apt-get update && apt-get install -y python python-pip
 RUN pip install flask
@@ -77,4 +77,4 @@ docker exec -it webapp /bin/bash
 
 ```
 
-## In production use the small p for statuc port assignment 
+## In production use the small p for static port assignment 
