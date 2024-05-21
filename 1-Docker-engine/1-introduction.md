@@ -15,7 +15,7 @@ Docker Daemon is responsible for the networks
 - Just like howthe lifecycle of how container to be. 
 - `Docker Daemon` manages the images, volumes, and networks
 - `Containerd`- manages the containers
-- `containerd-shim`- ensures container runs of daemon fails
+- `containerd-shim`- ensures container runs of daemon fails, omponent is responsible for keeping the containers alive when the Docker Daemon goes down
 - `runC`- run container
 
 ## 4 primary objects Docker manages:

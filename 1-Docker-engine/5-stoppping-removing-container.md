@@ -8,7 +8,7 @@
 
 ## CMD is httpd-foreground
 `This is the command executed when docker is started `
-
+"httpd-foreground"
 
 
 ## Linux signals to PAUSE a signal
@@ -34,20 +34,23 @@ kill -SIGKILL $(pgrep httpd)
 ```
 
 
-## Docker pause, resume, kill proceesses
+## Docker pause, resume, kill processes
 
 ```md
+## start a httpd container with container name  = web
 docker container run --name web httpd
 
+## pause a container
 docker container pause web
 
+## unpause the container
 docker container unpause web
 
+## stop the container 
 docker container stop web 
 
 
 ## Can pass a specific signal to a process
-
 docker container kill --signal=9 web
 
 ```
@@ -61,20 +64,25 @@ docker container stop web
 docker container rm web
 
 ## list running docker container ids only
-
 docker container ls -q
 
-## use this nice linuxcoommand to stop all running at once 
+## use this nice linux command to stop all running at once 
 docker container stop $(docker container ls -q)
 
-## remove all at once
+## remove all containers at once
 docker container rm $(docker container ls -a)
 
 ## OR use prune to rm all stoped containers
 docker container prune 
 
+## --rm: Automatically remove the container when it exits.
 ## We may not require to stay running after execution 
+## after expr eqn is done, it removes the container
 docker container run --rm ubuntu expr 4 + 5
+
+
+## if i run docker stop webapp
+it removes the container permently 
 ```
 
 ## Inside the container
@@ -101,7 +109,9 @@ it replaces the original process, so if you type exit, it kills the container
 ## Container Hostname
 
 ```md
+## Here we setting a new hostname to the web app container
 ## used when you need to set a URL
+
 docker container run -it --name=webapp --hostname=webapp ubuntu
 ```
 
