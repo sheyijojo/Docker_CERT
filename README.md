@@ -15,6 +15,3 @@ exit 1 is an failure
 
 ```
 
-## --restart flag
-
-![Docker restart](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/docker_start_stop_flags.png?raw=true)
