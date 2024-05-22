@@ -34,7 +34,7 @@ docker buld -f Dockerfile.dev https://github.com/myaccount/myapp
 
 ```md
 ## chache busting technique 
- it is recommended to run RUN updates on a single line instructions like this in order to pull the latest updates 
+It is recommended to run RUN updates on a single line instructions like this in order to pull the latest updates 
 
 
 RUN apt-get update && apt-get install -y \
