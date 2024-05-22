@@ -6,7 +6,7 @@ parent image is one an image is built from
 ![Base Image](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/base_vs_parent_image.png?raw=true)
 
 ## can have multiple parent images
-![MultipleImage](https://github.com/sheyijojo/Docker_CERT/blob/main/parent_images.png?raw=true)
+![MultipleImage](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/parent_images.png?raw=true)
 
 
 ```md
