@@ -3,14 +3,14 @@ Base is built from scatch
 
 parent image is one an image is built from 
 
-![Base Image](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/base_vs_parent_image.png.png?raw=true)
+![Base Image](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/base_vs_parent_image.png?raw=true)
 
 ## can have multiple parent images
-![MultipleImage](https://github.com/sheyijojo/Docker_CERT/blob/main/parent_images.png.png?raw=true)
+![MultipleImage](https://github.com/sheyijojo/Docker_CERT/blob/main/parent_images.png?raw=true)
 
 
 ```md
-##base images
+## base images
 
 Most OS habve their images configured alreay, you do not need to vreate any of your own.
 
