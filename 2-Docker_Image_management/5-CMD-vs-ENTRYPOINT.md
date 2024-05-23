@@ -24,7 +24,7 @@ By default, docker do not attach a terminal to a container.
 
 //appends the command and it overrides the CMD in dockerfile
 
-docker run ubuntu [COOMMAND]
+docker run ubuntu [COMMAND]
 docker run ubuntu sleep 5
 
 //runs for 5secs and then exit 
