@@ -1,5 +1,7 @@
 ## Docker Daemon Security
 
+
+
 `https://excalidraw.com/`
 
 ## If they gain access to the Docker Deamon(server)
@@ -65,5 +67,8 @@ Use certificate based authentication
 ```
 
 ## Summary 
+
+![TLS](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/tls_cert.png?raw=true)
+
 
 ![TLS_summary](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/tls_summary.png?raw=true)
