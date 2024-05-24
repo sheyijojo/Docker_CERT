@@ -11,6 +11,10 @@ copy source code to /opt folder
 run the webserver using "flask" command
 ```
 
+## Build an Image from an existing container
+`docker commit`
+
+
 ## Dockerfile
 ```Dockerfile
 FROM Ubuntu

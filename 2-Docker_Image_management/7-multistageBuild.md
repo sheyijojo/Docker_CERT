@@ -39,7 +39,7 @@ RUN npm run build
 ```
 
 
-## multistage 
+## Multistage 
 
 ```md
 ## Once you see multi FROM statments, that means it is a multistage build 

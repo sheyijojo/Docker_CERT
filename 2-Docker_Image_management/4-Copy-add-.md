@@ -1,8 +1,9 @@
 ## Diff between COPY and ADD
 ```md
 ## COPY and ADD
-ADD can extract a tar file and add it to a dur in container 
+ADD can extract a tar file and add it to a DIR in container 
 
+## COPY doesn not extract 
 
 Remember it extracts and do copy the tar file
 you can specify a url

@@ -12,7 +12,7 @@ parent image is one an image is built from
 ```md
 ## base images
 
-Most OS habve their images configured alreay, you do not need to vreate any of your own.
+Most OS have their images configured already , you do not need to create any of your own.
 
 ## This is how it looks for debian:buster-slim
 FROM scratch
