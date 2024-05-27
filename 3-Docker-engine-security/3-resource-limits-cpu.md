@@ -58,8 +58,8 @@ docker container run --cpus=2.5 webapp
 
 docker container update --cpus=0.5 webapp
 
+```
 
-
-## cpus older way 
+## cpu older way 
 ![cpu_usage](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/cpu_usage.png?raw=true)
 
