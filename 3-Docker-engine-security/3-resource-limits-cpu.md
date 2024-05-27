@@ -1,15 +1,17 @@
 ## Container Memory - Limit and Reservations
+What is a linux feature that prevents a process within the container to access raw sockets?
 
+- kernel capbilities 
 ```md
 ## containers are just another process running on the host.
 
 As default, there is no restriction to the amount of CPU or Memory to a host 
 
 
-If required, a coontainer can consume all of the CPU and memory in a host, denying all other processes. 
+If required, a container can consume all of the CPU and memory in a host, denying all other processes. 
 
 
-## Kernel detects the systen is out of memory
+## Kernel detects the system is out of memory
 If the kernel detects the system is out of memory, it starts killing processes on the host. 
 
 ## How processes compete for CPU in Linux 
