@@ -6,6 +6,13 @@
 ## complex app running multiple services
 Easier to run and maintain. This compose is only applicatble to running containers on a single docker host
 
-#
+
+
+```
+
+
+```md
+
+
 
 ```
