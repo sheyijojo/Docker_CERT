@@ -59,7 +59,7 @@ result:
 ## PosgreSQL
 ## .NET - App
 
-
+clone the source code repository and deployed it 
 
 
 ```
