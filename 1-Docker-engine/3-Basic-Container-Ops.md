@@ -1,4 +1,4 @@
-## Default location od=f docker in linux systems 
+## Default location of docker in linux systems 
 
 `ls /var/lib/docker/`
 
