@@ -5,7 +5,7 @@ docker ps
 
 ## if a host wants to connect to DOCKER host remotely
 
-## export DOCKER_HOST="tcp://192.168.1.10:2375"
+export DOCKER_HOST="tcp://192.168.1.10:2375"
 
 
 port 2375 for uncrypted traffic

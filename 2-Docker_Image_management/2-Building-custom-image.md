@@ -11,6 +11,13 @@ copy source code to /opt folder
 run the webserver using "flask" command
 ```
 
+## Important Docker init 
+
+```md
+docker init
+
+```
+
 ## Build an Image from an existing container
 `docker commit`
 
