@@ -44,11 +44,18 @@ Sometimes you may need external access to the docker Daemon from another host, o
 ## Steps
 
 1. Add "host":["tcp"//192.168.1.10:2375"] to /etc/docker/daemon.json
-2. Make sure you expose this service to private networks within our org
-3. If the org does have a public facing interface, ensure the docker host is not exposed on those interfaces. 
-4. secure TLS certificate server.pem, amd serverkey.pem and palace it in `/var/docker/server.pem` and `/var/docker/serverkey.pem`
-5. the host port will now be 2376
-6. in the remote system, you can now target the docker api server by `export DOCKER_HOST="tcp://192.168.1.10:2376", also DOCKER_TLS=true
+
+
+1. Make sure you expose this service to private networks within our org
+
+
+1. If the org does have a public facing interface, ensure the docker host is not exposed on those interfaces. 
+
+1. secure TLS certificate server.pem, amd serverkey.pem and palace it in `/var/docker/server.pem` and `/var/docker/serverkey.pem`
+
+1. the host port will now be 2376
+
+1. in the remote system, you can now target the docker api server by `export DOCKER_HOST="tcp://192.168.1.10:2376", also DOCKER_TLS=true
 
 
 
