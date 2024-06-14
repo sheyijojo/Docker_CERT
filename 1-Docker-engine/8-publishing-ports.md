@@ -14,7 +14,8 @@ The internal ip of the container is only accessible from the docker host, only i
 ## for user to access
 use the docker host ip and map the docker container ip to a free port in the docker host 
 
-## map port 80 of the local host to 5000 of the container 
+## map port 5000 of the container to the port 80 on the host 
+## Expose port 5000 from the container to port 80 on thehost machine 
 docker run -p 80:5000 webapp
 
 ##if the ip of the docker host is 192.168.1.5:80
