@@ -86,7 +86,7 @@ docker image inspect httpd -f '{{.Os}}' '{{.Architecture}}'
 
 ```md
 
-## save image
+## save image and tar it 
 docker image save alpine:latest  -o alpine.tar
 
 
