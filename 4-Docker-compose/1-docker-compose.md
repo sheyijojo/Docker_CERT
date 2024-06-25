@@ -27,7 +27,7 @@ links used on the terminal is deprecated
 ```
 
 ```md
-###in the yaml file for docker compose file
+### In the yaml file for docker compose file
 
 ## The key is the image, and the value is the name of the image 
 
