@@ -127,7 +127,6 @@ docker node rm workerone
 ## disable the swarm node from worker one before rm, run this on the worker node you wanna remove 
 docker system info | grep -i swarm 
 
+## on the worker node 
 docker swarm leave 
 ```
-
-## 
