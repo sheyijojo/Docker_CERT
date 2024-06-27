@@ -1,4 +1,4 @@
-## Swarm High Availability 
+### Swarm High Availability 
 
 ```md
 Manager node is nknown for managing the worker state. Havimg multiple manager nodes is recommended for fault tolerance 
