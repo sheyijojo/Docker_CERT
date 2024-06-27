@@ -34,7 +34,7 @@ It gets response from at least one of the worker to reach quorum and commit the 
 This means that any changes made by any of the managwer is with consensus from majority of the managers in the cluster. 
 
 ```
-![quorum](/Docker_CERT/_assets/quorum.png)
+![quorum](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/quorum.png)?raw=true)
 ```md
 Quorum is defined as the min num of members in an assembly that must be present at any of its meetings to make the proceedings of the meeting valid.
 
