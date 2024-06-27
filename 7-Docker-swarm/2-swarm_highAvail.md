@@ -34,8 +34,29 @@ It gets response from at least one of the worker to reach quorum and commit the 
 This means that any changes made by any of the managwer is with consensus from majority of the managers in the cluster. 
 
 ```
-![quorum](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/quorum.png)?raw=true)
+![quorum](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/quorum.png?raw=true)
 ```md
+
+## 
 Quorum is defined as the min num of members in an assembly that must be present at any of its meetings to make the proceedings of the meeting valid.
 
+
+## Fault tolerance
+The min number of nodes that can fail 
+In essence, how many nodes failure the cluster can withstand. 
+
+fault tolerance(N) = (N-1)/2
+
+
+## select odd number for master nodes when you design your env
+
+## Distrubute your managers accross diff datacenters 
+
+## TO reovcer from quaorum is to bring back the nodes back online 
+
+## if you cannot bring the nodes back online, force create
+docker swarm init --force-new-cluster 
+
+## to promte a worker node to become a master
+docker node promote 
 ```
