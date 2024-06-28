@@ -90,6 +90,10 @@ docker service create --constraint=node.labels.type==cpu-optimized batch-process
 docker service create --constraint=node.labels.type!=memory-optimized web 
 
 
+## parallellism
+
+docker service update --image=httpd:2 --update-parallelism=2 secondservice
+
 
 
 ```
