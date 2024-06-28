@@ -70,8 +70,27 @@ You do not need a replica count, good for monitoring agents or logging agents
 ```
 
 ## Placement in Swarm
+Nodes can differ on their hardware resources and requirements, hence someworkloads are strategically placed using labels and constraints
 
 ```md
+## use labels and contraints 
+docker node update --label-add type=cpu-optimized worker1
+
+docker node update --label-add type=memory-optimized worker2
+
+docker node inspect worker1 --pretty 
+
+## when creating a service, we specify a constraints
+takes a key value pair, make sure a particular workload ends up in the node with a label
+
+docker service create --constraint=node.labels.type==cpu-optimized batch-processing
+
+## another method 
+
+docker service create --constraint=node.labels.type!=memory-optimized web 
+
+
 
 
 ```
+

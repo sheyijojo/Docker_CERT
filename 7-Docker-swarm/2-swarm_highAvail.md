@@ -60,3 +60,24 @@ docker swarm init --force-new-cluster
 ## to promte a worker node to become a master
 docker node promote 
 ```
+
+## Distributed consensus - RAFT - Auto-Lock 
+Nodes can leave a cluster and will need to rejoin with this key. 
+```md
+- Rafts logs are stored on disk
+- encryption and tls KEYS ARE STORED IN THE Node memory byu default
+- Docker provides option to take ownership of the management of the key to store in an external key bmanagement system
+
+## For a new cluster 
+- docker swarm init --autolock=true
+
+## for an existing cluster 
+docker swarm update --autolock=true
+
+store the key safe;y 
+
+## rejoin the cluster 
+docker swar, unlock 
+
+
+```
