@@ -4,7 +4,7 @@
 Manager node is known for managing the worker state.
 Having multiple manager nodes is recommended for fault tolerance 
  
-## conflict of interest, a leader is used to make management decisions 
+## Avoid conflict of interest, a leader is used to make management decisions 
 Other managers need to be aware of the application state, which is called a Distributed consensus-. Hence, then implementing the RAFT consensus algorithm. 
 
 RAFT - Decides who is going to become the leader among the three manager nodes. 
@@ -31,7 +31,7 @@ A leader manager with decisions to add a new worker node to the cluster has to i
 
 It gets response from at least one of the worker to reach quorum and commit the changes to the database on all master nodes.
 
-This means that any changes made by any of the managwer is with consensus from majority of the managers in the cluster. 
+This means that any changes made by any of the manager is with consensus from majority of the managers in the cluster. 
 
 ```
 ![quorum](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/quorum.png?raw=true)
@@ -60,13 +60,16 @@ docker swarm init --force-new-cluster
 ## to promte a worker node to become a master
 docker node promote 
 ```
-
+## Auto lock 
 ## Distributed consensus - RAFT - Auto-Lock 
 Nodes can leave a cluster and will need to rejoin with this key. 
 ```md
 - Rafts logs are stored on disk
 - encryption and tls KEYS ARE STORED IN THE Node memory byu default
-- Docker provides option to take ownership of the management of the key to store in an external key bmanagement system
+- Docker provides option to take ownership of the management of the key to store in an external key management system
+
+## Autolock
+communication between swarm nodes and the raft logs are on disk are protected using tls keys 
 
 ## For a new cluster 
 - docker swarm init --autolock=true
@@ -74,7 +77,7 @@ Nodes can leave a cluster and will need to rejoin with this key.
 ## for an existing cluster 
 docker swarm update --autolock=true
 
-store the key safe;y 
+store the key generated from the above command safely 
 
 ## rejoin the cluster 
 docker swarm unlock 
@@ -86,5 +89,7 @@ docker swarm unlock
 ```md
 ## create a service with a httpd:alpine image in docker swarm 
 docker service create --name=fortstservice -p 80:80 httpd:alpine 
+
+
 
 ```

@@ -9,12 +9,17 @@ e.g
 ## commands
 
 ## On the manager node 
+
+
+## createa 3 replicas of an httpd image
 docker service create --replicas=3 httpd 
 
 docker service create --name=firstservice -p 80:80 httpd:apline 
 
+## list services
 docker service ls
 
+##
 docker service ps firstservice 
 
 docker service inspect firstservice --pretty 
@@ -30,11 +35,11 @@ docker service rm firstservice
 ## rolling image one instance at a time 
 docker service update -p 80:80 --image=web:2 web
 
-## add a dely flag if you want to 
+## add a delay flag if you want to 
 
 docker service update -p 80:80 --update-delay 60s --image=web:3 web 
 
-## update multiple instances at a time
+## update multiple instances at a time with parellelism 
 docker service update -p 80:80 --update-parallelism 3 --image=web:2 web 
 
 //This updates 3 instances at a time 
@@ -43,7 +48,7 @@ docker service update -p 80:80 --update-parallelism 3 --image=web:2 web
 docker service inspect web 
 
 ## what if an update fails 
-by default it is pause.
+by default it is paused.
 
 docker service update -p 80:80 \
    --update-failure-action pause|continue|rollback \
@@ -56,7 +61,7 @@ docker service update --rollback web
 ```
 
 ## Replicas vs Global Service Types
-
+A global service will always deploy exactly one instance of the application on all the nodes in the cluster.
 ```md
 ## Diff types of services 
 The default service is the replicated service 
@@ -67,10 +72,11 @@ docker service inspect web --pretty | grep -i "service mode"
 docker service create --mode=global agent 
 
 You do not need a replica count, good for monitoring agents or logging agents 
+
 ```
 
 ## Placement in Swarm
-Nodes can differ on their hardware resources and requirements, hence someworkloads are strategically placed using labels and constraints
+Nodes can differ on their hardware resources and requirements, hence some workloads are strategically placed using labels and constraints
 
 ```md
 ## use labels and contraints 
@@ -89,10 +95,13 @@ docker service create --constraint=node.labels.type==cpu-optimized batch-process
 
 docker service create --constraint=node.labels.type!=memory-optimized web 
 
-
+## create a servive from a laebls env==dev
+docker service create --name=placementest --constraint=node.labels.env==dev --replicas=3 redis 
+```
 ## parallellism
-
+```md
 docker service update --image=httpd:2 --update-parallelism=2 secondservice
+
 
 ```
 
