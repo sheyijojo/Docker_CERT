@@ -1,11 +1,11 @@
 ### Swarm High Availability 
 
 ```md
-Manager node is known for managing the worker state. H
-Havimg multiple manager nodes is recommended for fault tolerance 
+Manager node is known for managing the worker state.
+Having multiple manager nodes is recommended for fault tolerance 
  
 ## conflict of interest, a leader is used to make management decisions 
-Other managers need to be aware of the application state called Distributed consensus-. Hence, then implementing the RAFT consensus algorithm. 
+Other managers need to be aware of the application state, which is called a Distributed consensus-. Hence, then implementing the RAFT consensus algorithm. 
 
 RAFT - Decides who is going to become the leader among the three manager nodes. 
 
@@ -77,7 +77,14 @@ docker swarm update --autolock=true
 store the key safe;y 
 
 ## rejoin the cluster 
-docker swar, unlock 
+docker swarm unlock 
 
+```
+
+## Demo service in Swarm 
+
+```md
+## create a service with a httpd:alpine image in docker swarm 
+docker service create --name=fortstservice -p 80:80 httpd:alpine 
 
 ```

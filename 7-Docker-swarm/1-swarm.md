@@ -10,10 +10,10 @@ Container orchestration is basically a section of multiple docker hosts
 
 ## What is docker swamp 
 
-Docker swarm will help load balancing 
+Docker swarm will help with load balancing, which is very diffcult to do individually.
 
 ## Node
-Each machines virtual or physical on cloud or prem that has docker installed on it  is known as a node.
+Each machines virtual or physical on cloud or prem that has docker installed on, it is known as a node.
 
 
 ## Swarm cluster 
@@ -37,15 +37,17 @@ A user provides instructions to the manager node to deploy an application by sub
 ## Run this command 
 docker system info 
 
-comment - you will notice the Swarm to be inacive, hence run docker swarm init 
+comment - you will notice the Swarm to be inactive, hence run 
+
+`docker swarm init `
 ## swarm status is inactive 
 Nodes must be configured with a static ip address as the worker nodes connect to the manager on its IP address.
 
- You must open the following ports 
+## You must open the following ports 
 
-port
+## port
 TCP 2377 - CLuster Management Communications
-TCP and UDP 7946 - Communciation among nodes 
+TCP and UDP 7946 - Communication among nodes 
 UDP 4789 - Overlay network traffic 
 
 
@@ -58,7 +60,7 @@ docker swarm init
 ```md
 ## One manager and two worker nodes 
 
-manager becomes the manager with the docker initi 
+manager becomes the manager with the docker init command 
 
 ## A token is given for worker nodes to join the cluster 
 docker swarm join --token SWMTKN-1-1msdndnapsnasnaspnav-saansa 172.31.46.126:2377
@@ -116,7 +118,7 @@ docker node demote workerone
 
 docker node update --availabilty drain workerone 
 
-## bring back  availabilty
+## bring back availabilty
 
 docker node update --availability active workerone 
 

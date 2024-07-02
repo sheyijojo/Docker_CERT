@@ -94,7 +94,5 @@ docker service create --constraint=node.labels.type!=memory-optimized web
 
 docker service update --image=httpd:2 --update-parallelism=2 secondservice
 
-
-
 ```
 
