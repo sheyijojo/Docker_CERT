@@ -8,7 +8,7 @@
 
 When you intialize a Docker swarm cluster, it creates a new network of type overlay, an internal private network thst spans accross all nodes in the cluster. 
 
-When docker swarm is initialized, the default type of network is the ingress neteork 
+When docker swarm is initialized, the default type of network is the ingress network of type overlay
 
 Imagine we have a single node cluster and we plan to run a web server container on it and each of it tries to map port 5000 to 80 on the same host
 ```
@@ -24,7 +24,7 @@ Ingress network has a built in load balancer that redirects traffic from 80 to 5
 Ingress is created automatically.
 Ingress is a type of overlay network. 
 
-The Birdge network known as docker_gwbridge Network connects the individual daemon to the other daemons participating in the swarm 
+The Bridge network known as docker_gwbridge Network connects the individual daemon to the other daemons participating in the swarm 
 
 ## can create an overlay network type
 
