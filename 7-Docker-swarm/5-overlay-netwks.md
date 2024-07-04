@@ -11,9 +11,11 @@ When you intialize a Docker swarm cluster, it creates a new network of type over
 When docker swarm is initialized, the default type of network is the ingress neteork 
 
 Imagine we have a single node cluster and we plan to run a web server container on it and each of it tries to map port 5000 to 80 on the same host
-
+```
+![ingress](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/INGRESS.png?raw=true)
+```md
 ## Ingress Network 
-![quorum](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/INGRESS.png?raw=true)
+
 This is not possible because we cannot have two port mappings of the same type, this is where Ingress Network comes in.
 
 Ingress network has a built in load balancer that redirects traffic from 80 to 5000
