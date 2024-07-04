@@ -1,14 +1,14 @@
 ## Docker config objects 
 ```md
 ## Scenario 
-Imagine you have an nginx config file you want to mount to the docker container. 
+Imagine you have an nginx config file you want to mount on the docker container. 
 And you need multiple containers to have this nginx file. 
 
 
 This is when config objects come in. 
 
 ```
-This is not a replacenent for vol mounting 
+This is not a replacement for vol mounting 
 ## create a config object on the host that has the nginx.conf 
 
 ```md
@@ -22,7 +22,7 @@ docker config create nginx-conf /tmp/nginx.conf
 
 docker service create --replicas=4 --config nginx-conf nginx 
 
-## speicifying in a defined path 
+## speciifying in a defined path 
 
 docker service create --replicas=4 --config= src=nginx-conf, target="/etc/nginx/nginx.conf" nginx 
 
