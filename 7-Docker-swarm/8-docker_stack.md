@@ -12,13 +12,21 @@ A stack is a group of interalleted services that together form an entire applica
 ![stack](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/stack.png?raw=true)
 
 ## How do you run a docker-compose service on multi worker node 
-![stack_deploy](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/stack.png?raw=true)
+![stack_deploy](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/stack_deploy.png?raw=true)
 ```md
 version 3
 ```
 
 ## stack constraint 
 
-![constraint](/Docker_CERT/_assets/stack_deploy_constraint.png)
+![stack_constraint](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/stack_constraint.png?raw=true)
 
+```md
+docker stack deploy 
 
+docker stack ls 
+
+docker services 
+docker stack ps (list tasks)
+docker stack rm 
+```
