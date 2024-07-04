@@ -12,7 +12,7 @@ When docker swarm is initialized, the default type of network is the ingress net
 
 Imagine we have a single node cluster and we plan to run a web server container on it and each of it tries to map port 5000 to 80 on the same host
 ```
-![ingress](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/INGRESS.png?raw=true)
+![ingress](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/ingress.png?raw=true)
 ```md
 ## Ingress Network 
 
