@@ -26,17 +26,17 @@ API server acts as the frontend for kubernete. User's devices, CLI all talk to t
 ## etcd
 This is the key value store to store data of the nodes in the cluster. Implements the logs to ensure there are no conflicts among the nodes. 
 
-## scheduler (container distribtunin)
-Resonsible for distrbuting workload or containers across nodes in the cluster. Looks for newly created containers and assign them to nodes.
+## scheduler (container distribution)
+Responsible for distrbuting workloads or containers or pods across nodes in the cluster. Looks for newly created containers and assign them to nodes.
 
 ## Controller (nodes managing)
-This is the brain behind orchestration. They responsible for noticing and responding when nodes or containers.go down. Brings up new containers in such cases
+This is the brain behind orchestration. They responsible for noticing and responding when nodes or containers go down. Brings up new containers in such cases
 
 ## Container runtime 
 This is the underlying software used to run containers which is Docker
 
 ## Kubelet (agents on everynodes)
-This is an agent that runs ioneach nodes in the cluster. Make sure the containers are running on each nodes as expected
+This is an agent that runs on each nodes in the cluster. Make sure the containers are running on each nodes as expected
 
 ## kubectl 
 
@@ -50,4 +50,9 @@ kubectl cluster-info
 kubectl get nodes 
 
 kubectl run my-web-app --image=my-web-app --replicas=1000
+
+## components deployed only on master nodess
+kube Controller Manager
+Kube Api Server
+Kube Scheduler
 ```
