@@ -56,7 +56,7 @@ kubectl get pods
 ## Note, using the file as input only will not update the replicas automatically
 3. kubectl edit replicaset replicaset-name 
 4. scale without using the definition file 
-  kubectl scale replicaset replicatsetname --replicas=2
+5. kubectl scale replicaset replicatsetname --replicas=2
 
 ```
 ## Demo
