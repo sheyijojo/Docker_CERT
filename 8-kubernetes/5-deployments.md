@@ -27,8 +27,10 @@ Deployment provides us with the capabilities to upgrade the underlying instances
 The same as Replica set except the kind:Deployment 
 
 kubectl create -f deployment-definition.yml 
+
 ## record the course of change 
 kubectl create -f deployment-definition.yaml --record
+
 ## This juts record the commands you ran to create the deploymen
 kubectl get deployments 
 
@@ -40,6 +42,8 @@ kubectl get all
 ```
 ## Deployments - Updates and Rollback
 ![ReplicaSet](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/rollouts_deployment.png?raw=true)
+
+## rolling update 
 ![rolling_recreate](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/rolling_updates.png?raw=true)
 ```md
 ## see status of rollouts 
