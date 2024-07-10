@@ -37,4 +37,45 @@ This is because it listens to port on the node and forwards it to the pod.
 
 ## nodeport service 
 
-![nodeport](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/services_type.png?raw=true)
+![nodeport](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/service-definition.png?raw=true)
+
+## service defintion with pod definition file 
+
+![service2](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/service2.png?raw=true)
+```md
+Nodeport service is very easy. It is easy to configure and requires a servi
+## take the label from the pod defintion into the service defintioon
+
+
+apiVersion: v1
+kind: Service
+metadata: 
+    name: myapp-service
+spec:
+   type: NodePort
+   ports:
+     - targetPort: 80
+       port: 80
+       nodeport:3008
+   selector:
+      app: myapp
+      type: front-end 
+
+kubectl create -f service-definition.yaml 
+
+kubectl get services
+
+curl 
+```
+## serivce with one pod
+![service3](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/service3.png?raw=true)
+
+
+## What if we have multiple pods?
+```md
+## They all have the same label and used as selcetor during the creation og the service. 
+
+You do not need any other configuration to makethis happen using a random algorithm for load balancing. 
+
+
+```
