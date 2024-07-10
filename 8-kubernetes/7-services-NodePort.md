@@ -78,4 +78,8 @@ curl
 You do not need any other configuration to makethis happen using a random algorithm for load balancing. 
 
 
+## if using minikube
+
+minikube service myapp-servicename --url 
+
 ```
