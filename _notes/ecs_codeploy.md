@@ -39,8 +39,18 @@ The following diagram shows how the load balancer, production listener, target g
 ## After successful deployment 
 ```md
 
+After a successful deployment, the production traffic listener serves traffic to your new replacement task set and the original task set is terminated.
 
+For information about how to use the AWS CLI to deploy an application into Amazon ECS, 
 
+## see Tutorial: Creating a service using a blue/green deployment. 
+
+https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-blue-green.html
+
+For information about how to use CodePipeline to detect and automatically deploy changes to an Amazon ECS service with CodeDeploy, see Tutorial:
+
+## Create a pipeline with an Amazon ECR source and ECS-to-CodeDeploy deployment. 
+https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-ecs-ecr-codedeploy.html
 ```
 
 ![after_Deployment](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/after_deployment.png?raw=true)
