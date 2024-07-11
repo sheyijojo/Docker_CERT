@@ -43,4 +43,4 @@ The following diagram shows how the load balancer, production listener, target g
 
 ```
 
-![after_Deployment](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/ECS_service_1.png?raw=true)
+![after_Deployment](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/after_deployment.png?raw=true)
