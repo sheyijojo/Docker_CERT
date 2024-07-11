@@ -1,0 +1,102 @@
+# Change the following to your desired values:
+#   ACCOUNT_NUMBER
+#   ECR_REGION
+#   ECR_REPOSITORY_NAME
+#   ECS_CONTAINER_NAME
+#   IMAGE_TAG
+#   REPOSITORY_URIgoo
+
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - echo $(aws --version)
+      - docker buildx create --name devops-builder
+      - docker buildx use devops-builder 
+
+
+      ## authenticate into aws 
+      # This line retrieves an authentication token from Amazon ECR to authenticate Docker CLI to your ECR registry.
+      - aws ecr get-login-password --region $ECR_REGION | docker login --username AWS --password-stdin $ACCOUNT_NUMBER.dkr.ecr.$ECR_REGION.amazonaws.com
+      #- aws ecr-public get-login-password --profile powerUser --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws
+      #- aws ecr get-login-password --profile ecr --region us-east-1 | docker login --username AWS --password-stdin 512196980568.dkr.ecr.us-east-1.amazonaws.com/image-from-gradle:jdk11 
+     # - docker login -u AWS -p $(aws ecr get-login-password --region the-region-you-are-in) xxxxxxxxx.dkr.ecr.the-region-you-are-in.amazonaws.com
+
+     # Constructs the repository URI based on the AWS account number, ECR region, and repository name.
+      - REPOSITORY_URI=${REPOSITORY_URI}
+      - echo $REPOSITORY_URI
+
+     # Extracts the first seven characters of the commit hash from the environment variable 
+     # echo $CODEBUILD_RESOLVED_SOURCE_VERSION, This is typically used as part of the image tag.
+     #- COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+
+     # IMAGE_TAG=${COMMIT_HASH:=latest}: Sets the IMAGE_TAG variable to the first seven characters of the commit hash,
+     # or to latest if the commit hash is not available. This is used as the tag for the Docker image.
+      - echo "running scripts to get the tags"
+      - |
+          # Read the current version from the environment variable
+          IMAGE_TAG=${IMAGE_TAG:-"1.0.4"}
+
+          # Extract the major, minor, and patch versions
+          MAJOR=$(echo "$IMAGE_TAG" | cut -d '.' -f 1)
+          MINOR=$(echo "$IMAGE_TAG" | cut -d '.' -f 2)
+          PATCH=$(echo "$IMAGE_TAG" | cut -d '.' -f 3)
+
+          # Increment the patch version
+          PATCH=$((PATCH + 1))
+
+          # Reset the patch version and increment the minor version if the patch version exceeds 9
+          if [ "$PATCH" -gt 9 ]; then
+              PATCH=0
+              MINOR=$((MINOR + 1))
+          fi
+
+          # Reset the minor version and increment the major version if the minor version exceeds 9
+          if [ "$MINOR" -gt 9 ]; then
+              MINOR=0
+              MAJOR=$((MAJOR + 1))
+          fi
+
+          # Form the new version string
+          NEW_IMAGE_TAG="$MAJOR.$MINOR.$PATCH"
+
+          # Export the new version to be used in subsequent build commands
+          export IMAGE_TAG=$NEW_IMAGE_TAG
+          echo "New image tag is $NEW_IMAGE_TAG"
+      #- ./increment_version.sh 
+      - echo "echoing image tag from the script I created in the buildfile directory"
+      - echo $IMAGE_TAG
+      - IMAGE_TAG=${IMAGE_TAG}
+      #- export IMAGE_TAG=$NEW_IMAGE_TAG
+      #- echo $IMAGE_TAG
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...   
+      - docker buildx build --platform linux/amd64  --load -t  $REPOSITORY_URI:$IMAGE_TAG ./backend
+      #- docker build -t $REPOSITORY_URI:$IMAGE_TAG ./backend
+      - docker images 
+
+
+      - |
+        echo $IMAGE_TAG
+        echo $NEW_VERSION 
+
+      ## - docker tag $REPOSITORY_URI:$IMAGE_TAG 
+     ## - docker tag $REPOSITORY_URI:$IMAGE_TAG $REPOSITORY_URI:latest
+     
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      #print the new URI
+      - echo $REPOSITORY_URI:$NEW_IMAGE_TAG
+      - docker push $REPOSITORY_URI:$IMAGE_TAG 
+      - echo Writing image definitions file...
+      - echo $ECS_CONTAINER_NAME
+      - printf '[{"name":"'$ECS_CONTAINER_NAME'","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+artifacts:
+  files: imagedefinitions.json
