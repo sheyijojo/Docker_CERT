@@ -12,7 +12,7 @@ Each pods get a seperate IP
 
 - 10.244.0.3
 - 10.244.0.2
-- 
+
 Each pods can communicate with each other. However, the ip is subjected to change when pods are recreated, so not a good idea. 
 
 ## Better way coming 
@@ -21,9 +21,9 @@ Each pods can communicate with each other. However, the ip is subjected to chang
 Ip conflicts could occur if two pods from two diff nodes have the same internal IP. 
 
 
-## Kubernetes Netw
+## Kubernetes Networking 
 
-k8 expects us to setup networking to meet fundamental requirements.
+k8 expects us to setup networking to meet fundamental requirement such as the ones below: 
 
  All containers/PODS can communicate with each other without NAT 
 
@@ -35,15 +35,14 @@ All nodes can commincate with all containers and vice-versa without NAT.
 ## Setting up the Networking
 
 ```md
-## Fortunately we do not need to set up by ourselve 
-Multiple pre-built solutions available 
+## Fortunately we do not need to set this networking requirement by ourselves 
+Multiple pre-built solutions available to be used. 
 - cisco
 - flannel
 - vmware
-- - clium 
+- clium 
 - NSX
 
 
 ```
-
 ![k8_netwrk2.png](https://github.com/sheyijojo/Docker_CERT/blob/main/_assets/k8_netwrk2.png?raw=true)
