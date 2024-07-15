@@ -10,7 +10,7 @@
 pods have ips assigned to them and we know they are not static.
 
 
-## Goruping the pods together
+## Grouping the pods together
 A kubernetes service can help group the ports together and provide a single interface to acces the pods in a group. 
 
 ## Each service gets an IP and name attached to it
