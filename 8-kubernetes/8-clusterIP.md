@@ -4,7 +4,7 @@
 ```md
 ## pods run frontend webserver
 ## pods run backend server
-## ## pods run database server
+## pods run database server
 
 ## What is the right way to establish connectivity amongst these pods
 pods have ips assigned to them and we know they are not static.

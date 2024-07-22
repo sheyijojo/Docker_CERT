@@ -11,9 +11,10 @@ KubeADM is will be used for the exams..
 
 Being on a cloud platform like GCP, AWS ....
 
-You could leverage the bative load balancer of that cloud platform..
+You could leverage the native load balancer of that cloud platform..
 
-Kubernetes has support for integrating tiwht the ALB of certain cloud platform 
+Kubernetes has support for integrating with the ALB of certain cloud platform 
 ```
 
-## Demo - Deploy voting app on Kubernetes 
+
+
